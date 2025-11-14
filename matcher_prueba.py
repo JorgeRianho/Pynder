@@ -1,41 +1,36 @@
-from rdflib import Graph, URIRef
+from rdflib import Graph, Namespace
 
-def get_all_predicates(graph: Graph):
+RML = Namespace("http://w3id.org/rml/")
+RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+
+def extract_output_predicates(mapping_graph: Graph):
     """
-    Returns a sorted list of all unique predicates found in the graph.
+    Extracts only predicates defined inside rml:predicateMap blocks
+    that will generate RDF triples.
     """
+    predicates = set()
+
     query = """
-    PREFIX rml: <http://w3id.org/rml/>
-    PREFIX rr: <http://www.w3.org/ns/r2rml#>
-    PREFIX ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#>
+    SELECT DISTINCT ?predicateValue WHERE {
+        ?pom rml:predicateMap ?pm .
+        ?pm ?valueType ?predicateValue .
 
-    SELECT DISTINCT ?p WHERE {
-        ?s ?p ?o .
+        FILTER(?valueType IN (rml:constant, rml:template, rml:reference))
     }
     """
-    return sorted(str(row[0]) for row in graph.query(query))
 
+    for row in mapping_graph.query(query, initNs={"rml": RML}):
+        predicates.add(str(row[0]))
 
-def match_predicate(graph: Graph, predicate: str):
-    predicate_uri = URIRef(predicate)
-    return {s for s, p, o in graph.triples((None, predicate_uri, None))}
+    return sorted(predicates)
 
 
 if __name__ == "__main__":
-    g = Graph()
-    g.parse("prueba.ttl", format="turtle")
+    mapping = Graph()
+    mapping.parse("prueba.ttl", format="turtle")
 
-    print("🔍 Buscando predicados...")
-    predicates = get_all_predicates(g)
+    print("🔍 Predicados reales encontrados en el mapping:")
+    preds = extract_output_predicates(mapping)
 
-    for pred in predicates:
-        print(f"\n📌 Predicado encontrado: {pred}")
-        
-        subjects = match_predicate(g, pred)
-        
-        if subjects:
-            print("   Sujetos con este predicado:")
-            for s in subjects:
-                print(f"     - {s}")
-        else:
-            print("   (ningún sujeto encontrado)")
+    for p in preds:
+        print(f"   ✔ {p}")
