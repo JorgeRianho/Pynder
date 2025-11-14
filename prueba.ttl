@@ -1,0 +1,16 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
+
+<file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='assistantProfessor' """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:AssistantProfessor ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
+            rml:termType rml:IRI ] .
