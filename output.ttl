@@ -1,0 +1,315 @@
+
+👉 Predicados extraídos del mapping:
+set()
+
+👉 Sujetos encontrados para cada predicado:
+
+Todos los triples en el grafo:
+n40c64aef81c94f08aeb7b2a5af5394c1b89 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b19
+n40c64aef81c94f08aeb7b2a5af5394c1b72 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#UndergraduateStudent
+n40c64aef81c94f08aeb7b2a5af5394c1b30 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b79
+n40c64aef81c94f08aeb7b2a5af5394c1b82 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n40c64aef81c94f08aeb7b2a5af5394c1b100 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b80 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b97 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN faculty ON graduateStudent.advisor=faculty.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b72 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b36
+n40c64aef81c94f08aeb7b2a5af5394c1b49 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b65 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf
+n40c64aef81c94f08aeb7b2a5af5394c1b51 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b52
+n40c64aef81c94f08aeb7b2a5af5394c1b5 http://w3id.org/rml/query 
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department 
+n40c64aef81c94f08aeb7b2a5af5394c1b52 http://w3id.org/rml/reference emailaddress
+n40c64aef81c94f08aeb7b2a5af5394c1b20 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Professor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b40
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Lecturer http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b45
+n40c64aef81c94f08aeb7b2a5af5394c1b67 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b1 http://w3id.org/rml/tableName university
+n40c64aef81c94f08aeb7b2a5af5394c1b75 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b76
+n40c64aef81c94f08aeb7b2a5af5394c1b89 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b90
+n40c64aef81c94f08aeb7b2a5af5394c1b107 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b108
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b85
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b75
+n40c64aef81c94f08aeb7b2a5af5394c1b13 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b14
+n40c64aef81c94f08aeb7b2a5af5394c1b28 http://w3id.org/rml/reference undergraduatecoursename
+n40c64aef81c94f08aeb7b2a5af5394c1b105 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FullProfessor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b33
+n40c64aef81c94f08aeb7b2a5af5394c1b69 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#University http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b2
+n40c64aef81c94f08aeb7b2a5af5394c1b55 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor
+n40c64aef81c94f08aeb7b2a5af5394c1b9 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b10
+n40c64aef81c94f08aeb7b2a5af5394c1b109 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b27 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b112 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b47 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b10 http://w3id.org/rml/template http://www.university{universitynr}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTakeCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b114
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b93
+n40c64aef81c94f08aeb7b2a5af5394c1b83 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+n40c64aef81c94f08aeb7b2a5af5394c1b114 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n40c64aef81c94f08aeb7b2a5af5394c1b11 http://w3id.org/rml/query 
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b61
+n40c64aef81c94f08aeb7b2a5af5394c1b2 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#University
+n40c64aef81c94f08aeb7b2a5af5394c1b66 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b23 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+n40c64aef81c94f08aeb7b2a5af5394c1b6 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department
+n40c64aef81c94f08aeb7b2a5af5394c1b42 http://w3id.org/rml/reference researchinterest
+n40c64aef81c94f08aeb7b2a5af5394c1b19 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b20
+n40c64aef81c94f08aeb7b2a5af5394c1b79 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b80
+n40c64aef81c94f08aeb7b2a5af5394c1b68 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b93 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf
+n40c64aef81c94f08aeb7b2a5af5394c1b7 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b73 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b74
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b35
+n40c64aef81c94f08aeb7b2a5af5394c1b6 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b30
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Professor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b39
+n40c64aef81c94f08aeb7b2a5af5394c1b45 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM lecturer INNER JOIN faculty ON lecturer.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentTakeCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b110
+n40c64aef81c94f08aeb7b2a5af5394c1b87 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b88
+n40c64aef81c94f08aeb7b2a5af5394c1b13 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b5
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentTakeCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b111
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTeachingAssistant http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b101
+n40c64aef81c94f08aeb7b2a5af5394c1b33 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Professor http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b41
+n40c64aef81c94f08aeb7b2a5af5394c1b98 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n40c64aef81c94f08aeb7b2a5af5394c1b105 http://w3id.org/rml/query 
+        SELECT publication.name AS publicationname, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM coAuthorOfPublication INNER JOIN publication ON coAuthorOfPublication.publicationID=publication.nr INNER JOIN faculty ON publication.mainAuthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateStudent ON coAuthorOfPublication.graduateStudentID=graduateStudent.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b94 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b84 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#ResearchGroup http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b21
+n40c64aef81c94f08aeb7b2a5af5394c1b101 http://w3id.org/rml/query 
+        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
+        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b2 http://w3id.org/rml/template http://www.university{nr}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b79 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf
+n40c64aef81c94f08aeb7b2a5af5394c1b96 http://w3id.org/rml/template http://www.university{undergraduatedegreefrom}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b3 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b67 http://w3id.org/rml/query 
+        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename
+        FROM faculty INNER JOIN department ON worksFor=department.nr INNER JOIN undergraduateCourse ON undergraduateCourse.teacher=faculty.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b12 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication
+n40c64aef81c94f08aeb7b2a5af5394c1b44 http://w3id.org/rml/template http://www.department{headof}.university{universitynr}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTakeCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b115
+n40c64aef81c94f08aeb7b2a5af5394c1b35 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b78 http://w3id.org/rml/reference telephone
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b26
+n40c64aef81c94f08aeb7b2a5af5394c1b15 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#title
+n40c64aef81c94f08aeb7b2a5af5394c1b97 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b31
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b89
+n40c64aef81c94f08aeb7b2a5af5394c1b3 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b4
+n40c64aef81c94f08aeb7b2a5af5394c1b21 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b4 http://w3id.org/rml/reference name
+n40c64aef81c94f08aeb7b2a5af5394c1b83 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b84
+n40c64aef81c94f08aeb7b2a5af5394c1b63 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b71 http://w3id.org/rml/query 
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b24 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b86 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n40c64aef81c94f08aeb7b2a5af5394c1b65 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b66
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b95
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b12
+n40c64aef81c94f08aeb7b2a5af5394c1b35 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='assistantProfessor' 
+n40c64aef81c94f08aeb7b2a5af5394c1b23 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b24
+n40c64aef81c94f08aeb7b2a5af5394c1b58 http://w3id.org/rml/template http://www.university{doctoraldegreefrom}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b107
+n40c64aef81c94f08aeb7b2a5af5394c1b111 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse
+n40c64aef81c94f08aeb7b2a5af5394c1b36 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentAdvisor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b82
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Lecturer http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b46
+n40c64aef81c94f08aeb7b2a5af5394c1b59 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#masterDegreeFrom
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b48
+n40c64aef81c94f08aeb7b2a5af5394c1b95 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b96
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b71
+n40c64aef81c94f08aeb7b2a5af5394c1b40 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b61 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom
+n40c64aef81c94f08aeb7b2a5af5394c1b33 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='fullProfessor' 
+n40c64aef81c94f08aeb7b2a5af5394c1b38 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor
+n40c64aef81c94f08aeb7b2a5af5394c1b71 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b59 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b60
+n40c64aef81c94f08aeb7b2a5af5394c1b73 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b77 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b78
+n40c64aef81c94f08aeb7b2a5af5394c1b22 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
+n40c64aef81c94f08aeb7b2a5af5394c1b85 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b36 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b30 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateCourse
+n40c64aef81c94f08aeb7b2a5af5394c1b47 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b55 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b56
+n40c64aef81c94f08aeb7b2a5af5394c1b115 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse
+n40c64aef81c94f08aeb7b2a5af5394c1b48 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b106 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n40c64aef81c94f08aeb7b2a5af5394c1b101 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b113 http://w3id.org/rml/query 
+        SELECT graduateStudent.name AS graduatestudentname, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM graduateStudentTakeCourse INNER JOIN graduateStudent ON graduateStudentTakeCourse.graduateStudentID=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN graduateCourse ON graduateStudentTakeCourse.graduateCourseID=graduateCourse.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b7
+n40c64aef81c94f08aeb7b2a5af5394c1b75 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress
+n40c64aef81c94f08aeb7b2a5af5394c1b7 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b8
+n40c64aef81c94f08aeb7b2a5af5394c1b110 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTeachingAssistant http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b102
+n40c64aef81c94f08aeb7b2a5af5394c1b53 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b54
+n40c64aef81c94f08aeb7b2a5af5394c1b15 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b16
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b13
+n40c64aef81c94f08aeb7b2a5af5394c1b88 http://w3id.org/rml/reference graduatestudentname
+n40c64aef81c94f08aeb7b2a5af5394c1b103 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingAssistantOf
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b87
+n40c64aef81c94f08aeb7b2a5af5394c1b43 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b44
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherUndergraduateCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b69
+n40c64aef81c94f08aeb7b2a5af5394c1b90 http://w3id.org/rml/reference emailaddress
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b27
+n40c64aef81c94f08aeb7b2a5af5394c1b86 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateStudent
+n40c64aef81c94f08aeb7b2a5af5394c1b39 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b91 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+n40c64aef81c94f08aeb7b2a5af5394c1b113 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b41 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b42
+n40c64aef81c94f08aeb7b2a5af5394c1b77 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+n40c64aef81c94f08aeb7b2a5af5394c1b54 http://w3id.org/rml/reference telephone
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherGraduateCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b63
+n40c64aef81c94f08aeb7b2a5af5394c1b34 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#FullProfessor
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#ResearchGroup http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b23
+n40c64aef81c94f08aeb7b2a5af5394c1b41 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchInterest
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b72
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b38
+n40c64aef81c94f08aeb7b2a5af5394c1b29 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b55
+n40c64aef81c94f08aeb7b2a5af5394c1b99 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b100
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b77
+n40c64aef81c94f08aeb7b2a5af5394c1b29 http://w3id.org/rml/query 
+        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
+        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b21 http://w3id.org/rml/query 
+        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b47
+n40c64aef81c94f08aeb7b2a5af5394c1b109 http://w3id.org/rml/query 
+        SELECT undergraduateStudent.name AS undergraduatestudentname, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM undergraduateStudentTakeCourse INNER JOIN undergraduateStudent ON undergraduateStudentTakeCourse.undergraduateStudentID=undergraduateStudent.nr INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN undergraduateCourse ON undergraduateStudentTakeCourse.undergraduateCourseID=undergraduateCourse.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b15
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b73
+n40c64aef81c94f08aeb7b2a5af5394c1b31 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Professor http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b43
+n40c64aef81c94f08aeb7b2a5af5394c1b64 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#ResearchGroup http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b22
+n40c64aef81c94f08aeb7b2a5af5394c1b74 http://w3id.org/rml/reference undergraduatestudentname
+n40c64aef81c94f08aeb7b2a5af5394c1b102 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n40c64aef81c94f08aeb7b2a5af5394c1b81 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, faculty.name AS facultyname
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN faculty ON undergraduateStudent.advisor=faculty.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b61 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b62
+n40c64aef81c94f08aeb7b2a5af5394c1b37 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b69 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b70
+n40c64aef81c94f08aeb7b2a5af5394c1b60 http://w3id.org/rml/template http://www.university{masterdegreefrom}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentAdvisor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b81
+n40c64aef81c94f08aeb7b2a5af5394c1b11 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTeachingAssistant http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b103
+n40c64aef81c94f08aeb7b2a5af5394c1b62 http://w3id.org/rml/template http://www.university{undergraduatedegreefrom}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b91
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b6
+n40c64aef81c94f08aeb7b2a5af5394c1b116 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b19 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherUndergraduateCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b68
+n40c64aef81c94f08aeb7b2a5af5394c1b91 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b92
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b53
+n40c64aef81c94f08aeb7b2a5af5394c1b102 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#TeachingAssistant
+n40c64aef81c94f08aeb7b2a5af5394c1b16 http://w3id.org/rml/reference publicationtitle
+n40c64aef81c94f08aeb7b2a5af5394c1b95 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b9
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherGraduateCourse http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b64
+n40c64aef81c94f08aeb7b2a5af5394c1b63 http://w3id.org/rml/query 
+        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateCourse ON graduateCourse.teacher=faculty.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b12 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n40c64aef81c94f08aeb7b2a5af5394c1b70 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b108 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b106
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FullProfessor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b34
+n40c64aef81c94f08aeb7b2a5af5394c1b31 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b32
+n40c64aef81c94f08aeb7b2a5af5394c1b17 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b18
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherUndergraduateCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b67
+n40c64aef81c94f08aeb7b2a5af5394c1b9 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudent http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b86
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#University http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b3
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b51
+n40c64aef81c94f08aeb7b2a5af5394c1b32 http://w3id.org/rml/reference graduatecoursename
+n40c64aef81c94f08aeb7b2a5af5394c1b45 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b5 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b50 http://w3id.org/rml/reference facultyname
+n40c64aef81c94f08aeb7b2a5af5394c1b115 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b116
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b37
+n40c64aef81c94f08aeb7b2a5af5394c1b53 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b17
+n40c64aef81c94f08aeb7b2a5af5394c1b38 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b25
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentTakeCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b109
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#University http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b1
+n40c64aef81c94f08aeb7b2a5af5394c1b39 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b26 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b87 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n40c64aef81c94f08aeb7b2a5af5394c1b92 http://w3id.org/rml/reference telephone
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#FacultyTeacherGraduateCourse http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b65
+n40c64aef81c94f08aeb7b2a5af5394c1b104 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n40c64aef81c94f08aeb7b2a5af5394c1b107 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+n40c64aef81c94f08aeb7b2a5af5394c1b34 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n40c64aef81c94f08aeb7b2a5af5394c1b99 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Publication http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b11
+n40c64aef81c94f08aeb7b2a5af5394c1b25 http://w3id.org/rml/query 
+        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
+        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr 
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentAdvisor http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b97
+n40c64aef81c94f08aeb7b2a5af5394c1b25 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b29
+n40c64aef81c94f08aeb7b2a5af5394c1b57 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoralDegreeFrom
+n40c64aef81c94f08aeb7b2a5af5394c1b51 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress
+n40c64aef81c94f08aeb7b2a5af5394c1b81 http://w3id.org/rml/referenceFormulation http://w3id.org/rml/SQL2008
+n40c64aef81c94f08aeb7b2a5af5394c1b43 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf
+n40c64aef81c94f08aeb7b2a5af5394c1b93 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b94
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b105
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b59
+n40c64aef81c94f08aeb7b2a5af5394c1b17 http://w3id.org/rml/predicate http://swat.cse.lehigh.edu/onto/univ-bench.owl#abstract
+n40c64aef81c94f08aeb7b2a5af5394c1b8 http://w3id.org/rml/reference name
+n40c64aef81c94f08aeb7b2a5af5394c1b26 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#UndergraduateCourse
+n40c64aef81c94f08aeb7b2a5af5394c1b37 http://w3id.org/rml/query 
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='associateProfessor' 
+n40c64aef81c94f08aeb7b2a5af5394c1b22 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchGroup
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#UndergraduateStudentAdvisor http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b83
+n40c64aef81c94f08aeb7b2a5af5394c1b85 http://w3id.org/rml/query 
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr 
+n40c64aef81c94f08aeb7b2a5af5394c1b103 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b104
+n40c64aef81c94f08aeb7b2a5af5394c1b18 http://w3id.org/rml/reference publicationabstract
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentAdvisor http://w3id.org/rml/subjectMap n40c64aef81c94f08aeb7b2a5af5394c1b98
+n40c64aef81c94f08aeb7b2a5af5394c1b56 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b57
+n40c64aef81c94f08aeb7b2a5af5394c1b46 http://w3id.org/rml/template http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Faculty http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b49
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentTakeCourse http://w3id.org/rml/logicalSource n40c64aef81c94f08aeb7b2a5af5394c1b113
+n40c64aef81c94f08aeb7b2a5af5394c1b76 http://w3id.org/rml/reference emailaddress
+n40c64aef81c94f08aeb7b2a5af5394c1b46 http://w3id.org/rml/class http://swat.cse.lehigh.edu/onto/univ-bench.owl#Lecturer
+file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#GraduateStudentAdvisor http://w3id.org/rml/predicateObjectMap n40c64aef81c94f08aeb7b2a5af5394c1b99
+n40c64aef81c94f08aeb7b2a5af5394c1b27 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b28
+n40c64aef81c94f08aeb7b2a5af5394c1b57 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b58
+n40c64aef81c94f08aeb7b2a5af5394c1b14 http://w3id.org/rml/reference publicationname
+n40c64aef81c94f08aeb7b2a5af5394c1b49 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b50
+n40c64aef81c94f08aeb7b2a5af5394c1b111 http://w3id.org/rml/objectMap n40c64aef81c94f08aeb7b2a5af5394c1b112

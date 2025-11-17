@@ -1,0 +1,18 @@
+
+👉 Predicados extraídos del mapping:
+{'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor', 'http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf', 'http://swat.cse.lehigh.edu/onto/univ-bench.owl#name'}
+
+
+👉 Sujetos reales generados para cada predicado (usando templates del mapping):
+
+🔹 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+  No matching subjects found.
+
+🔹 http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+  No matching subjects found.
+
+🔹 http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+  No matching subjects found.
+
+🔹 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+  No matching subjects found.
