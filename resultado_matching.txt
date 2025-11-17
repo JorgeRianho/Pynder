@@ -1,4 +1,5 @@
-🔍 Predicados y TriplesMap asociados:
+🔍 Predicados y TriplesMap asociados
+===================================
 
  ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor
     ↳ Predicate: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
@@ -19,29 +20,38 @@
     ↳ Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
 
 
-🔍 Subject Templates registradas:
+🔍 Subject Templates detectadas
+================================
 
- ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
- ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
- ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
- ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department → Template: http://www.department{departmentnr}.university{universitynr}.edu
-
-
-🔎 Matching automático entre subject templates:
+ ✔ file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+ ✔ file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+ ✔ file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+ ✔ file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department → http://www.department{departmentnr}.university{universitynr}.edu
 
 
-➡ URI generada: `http://www.department1.university1.edu/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+🔎 Matching automático entre Subject Templates
+==============================================
 
-➡ URI generada: `http://www.department1.university1.edu/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+➡ URI generada: `http://www.department1.university1.edu/1` (desde: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)
 
-➡ URI generada: `http://www.department1.university1.edu/1/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname})
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+➡ URI generada: `http://www.department1.university1.edu/1` (desde: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)
 
-➡ URI generada: `http://www.department1.university1.edu` (a partir de http://www.department{departmentnr}.university{universitynr}.edu)
-   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)
+➡ URI generada: `http://www.department1.university1.edu/1/1` (desde: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname})
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)
+
+➡ URI generada: `http://www.department1.university1.edu` (desde: http://www.department{departmentnr}.university{universitynr}.edu)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+   ✗ NO MATCH → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname} (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+   ✓ MATCH → http://www.department{departmentnr}.university{universitynr}.edu (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)

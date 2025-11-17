@@ -44,20 +44,13 @@ def extract_subject_templates(mapping_graph: Graph):
 
 
 def template_to_example_uri(template: str) -> str:
-    """
-    Converts a template like:
-      http://example.com/{ID}/{TYPE}
-    into a test URI:
-      http://example.com/1/1
-    """
+    """Generate example URI by replacing {vars} → "1"."""
     return re.sub(r"\{[^}]+\}", "1", template)
 
 
 
 def match_uri_to_template(uri: str, template: str) -> bool:
-    """
-    Checks whether a URI matches an RML template pattern.
-    """
+    """Checks whether a URI matches the RML template pattern."""
     regex = re.escape(template)
     regex = re.sub(r"\\\{[^}]+\\\}", r"(.+)", regex)
     return re.fullmatch(regex, uri) is not None
@@ -72,37 +65,44 @@ if __name__ == "__main__":
 
     with open(output_file, "w", encoding="utf-8") as f:
 
-        # ---- SECTION 1: Predicates ----
-        f.write("🔍 Predicados y TriplesMap asociados:\n\n")
+        # ---- PREDICATES ----
+        f.write("🔍 Predicados y TriplesMap asociados\n")
+        f.write("===================================\n\n")
+
         predicate_matches = extract_predicates_with_triplesmap(mapping)
 
         for entry in predicate_matches:
             f.write(f" ✔ TriplesMap: {entry['triplesMap']}\n")
             f.write(f"    ↳ Predicate: {entry['predicate']}\n\n")
 
-        # ---- SECTION 2: Subject Templates ----
+        # ---- SUBJECT TEMPLATES ----
         subject_templates = extract_subject_templates(mapping)
 
-        f.write("\n🔍 Subject Templates registradas:\n\n")
-        for s in subject_templates:
-            f.write(f" ✔ TM: {s['triplesMap']} → Template: {s['template']}\n")
+        f.write("\n🔍 Subject Templates detectadas\n")
+        f.write("================================\n\n")
 
-        # ---- SECTION 3: Auto Matching Between Templates ----
-        f.write("\n\n🔎 Matching automático entre subject templates:\n\n")
+        for s in subject_templates:
+            f.write(f" ✔ {s['triplesMap']} → {s['template']}\n")
+
+        # ---- MATCHING SECTION ----
+        f.write("\n\n🔎 Matching automático entre Subject Templates\n")
+        f.write("==============================================\n")
 
         for template_entry in subject_templates:
 
             test_uri = template_to_example_uri(template_entry["template"])
-            f.write(f"\n➡ URI generada: `{test_uri}` (a partir de {template_entry['template']})\n")
+            f.write(f"\n➡ URI generada: `{test_uri}` (desde: {template_entry['template']})\n")
 
-            match_found = False
+            matched_any = False
 
             for target in subject_templates:
                 if match_uri_to_template(test_uri, target["template"]):
-                    f.write(f"   ✓ MATCH con template: {target['template']}  (TM: {target['triplesMap']})\n")
-                    match_found = True
+                    f.write(f"   ✓ MATCH → {target['template']} (TM: {target['triplesMap']})\n")
+                    matched_any = True
+                else:
+                    f.write(f"   ✗ NO MATCH → {target['template']} (TM: {target['triplesMap']})\n")
 
-            if not match_found:
-                f.write("   ✗ No hay coincidencias.\n")
+            if not matched_any:
+                f.write(" ⚠ No hay coincidencias en ninguna plantilla.\n")
 
-    print(f"\n📁 Resultado generado en: {output_file}\n")
+    print(f"\n📁 Resultado generado correctamente en: {output_file}\n")
