@@ -1,0 +1,47 @@
+🔍 Predicados y TriplesMap asociados:
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor
+    ↳ Predicate: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor
+    ↳ Predicate: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication
+    ↳ Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department
+    ↳ Predicate: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department
+    ↳ Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+
+ ✔ TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department
+    ↳ Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+
+
+🔍 Subject Templates registradas:
+
+ ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+ ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+ ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication → Template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+ ✔ TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department → Template: http://www.department{departmentnr}.university{universitynr}.edu
+
+
+🔎 Matching automático entre subject templates:
+
+
+➡ URI generada: `http://www.department1.university1.edu/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+
+➡ URI generada: `http://www.department1.university1.edu/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname})
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+
+➡ URI generada: `http://www.department1.university1.edu/1/1` (a partir de http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname})
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor)
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor)
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication)
+
+➡ URI generada: `http://www.department1.university1.edu` (a partir de http://www.department{departmentnr}.university{universitynr}.edu)
+   ✓ MATCH con template: http://www.department{departmentnr}.university{universitynr}.edu  (TM: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department)
