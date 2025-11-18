@@ -1,0 +1,25 @@
+📌 Grouped Predicate → ObjectMap Report
+===========================================
+
+🔹 Predicate: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+   • http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor   (http://w3id.org/rml/constant)
+   • http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor   (http://w3id.org/rml/constant)
+   • http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department   (http://w3id.org/rml/constant)
+
+----------------------------------------------------
+
+🔹 Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+   • http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}   (http://w3id.org/rml/template)
+
+----------------------------------------------------
+
+🔹 Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+   • name   (http://w3id.org/rml/reference)
+
+----------------------------------------------------
+
+🔹 Predicate: http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+   • http://www.university{universitynr}.edu   (http://w3id.org/rml/template)
+
+----------------------------------------------------
+
