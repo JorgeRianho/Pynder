@@ -1,137 +1,101 @@
 from rdflib import Graph, Namespace
-import psycopg
 import re
-from io import StringIO   # 👉 para capturar salida en archivo
 
-
-# ==========================
-# Namespaces
-# ==========================
+# === Namespaces ===
 RML = Namespace("http://w3id.org/rml/")
 RR  = Namespace("http://www.w3.org/ns/r2rml#")
+RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+
+OUTPUT_FILE = "resultado_final_matching.txt"
+
+# === Query corregida unificada ===
+QUERY = """
+SELECT DISTINCT ?tm ?predicateValue ?predType ?object ?objType ?template WHERE { 
+    ?tm rml:predicateObjectMap ?pom .
+    
+    ?pom rml:predicateMap ?pm .
+    ?pm ?predType ?predicateValue .
+
+    OPTIONAL {
+        ?pom rml:objectMap ?om .
+        ?om ?objType ?object .
+    }
+
+    OPTIONAL {
+        ?tm rml:subjectMap ?sm .
+        ?sm rml:template ?template .
+    }
+
+    FILTER(?predType IN (rml:constant, rml:template, rml:reference))
+    FILTER(!bound(?object) || ?objType IN (rml:constant, rml:template, rml:reference))
+}
+"""
 
 
-class RMLProcessor:
-    def __init__(self, mapping_path, db_url):
-        self.graph = Graph()
-        self.graph.parse(mapping_path, format="turtle")
-
-        # Conexión a PostgreSQL
-        self.db_url = db_url.replace("postgresql+psycopg://", "postgresql://")
-        self.conn = psycopg.connect(self.db_url)
-
-    def get_predicates_from_mapping(self):
-        predicates = set()
-        predicate_map_props = [RML.predicateObjectMap, RR.predicateObjectMap]
-        predicate_value_props = [RML.predicateMap, RR.predicateMap]
-
-        for pom_prop in predicate_map_props:
-            for pom in self.graph.objects(None, pom_prop):
-                for pm_prop in predicate_value_props:
-                    for pm in self.graph.objects(pom, pm_prop):
-                        # rr:constant
-                        for const in self.graph.objects(pm, RR.constant):
-                            predicates.add(str(const))
-                        # rml:constant
-                        for const in self.graph.objects(pm, RML.constant):
-                            predicates.add(str(const))
-                        # rml:reference
-                        for ref in self.graph.objects(pm, RML.reference):
-                            predicates.add(f"reference:{ref}")
-        return predicates
-
-    def get_subjects_from_db_with_templates(self):
-        """
-        Genera sujetos reales usando los templates del mapping.
-        """
-        subjects_by_predicate = {}
-        predicates = self.get_predicates_from_mapping()
-
-        for pred in predicates:
-            if pred.startswith("reference:"):
-                subjects_by_predicate[pred] = "→ Predicado dinámico basado en columna (no consultable aún)."
-                continue
-
-            sql_subjects = set()
-
-            # Buscar predicateObjectMap con este predicado
-            for pom in self.graph.subjects(RML.predicateObjectMap, None):
-                for pm in self.graph.objects(pom, RML.predicateMap):
-                    pred_constants = set(str(c) for c in self.graph.objects(pm, RML.constant))
-                    pred_constants.update(str(c) for c in self.graph.objects(pm, RR.constant))
-                    if pred not in pred_constants:
-                        continue
-
-                    # Obtener logicalSource y query SQL
-                    for ls in self.graph.objects(pom, RML.logicalSource):
-                        queries = list(self.graph.objects(ls, RML.query))
-
-                        # Obtener template
-                        templates = []
-                        for sm in self.graph.subjects(RML.subjectMap, ls):
-                            templates.extend(str(t) for t in self.graph.objects(sm, RML.template))
-
-                        if not templates:
-                            templates = ["http://example.org/{row}"]  # fallback
-
-                        for q in queries:
-                            sql = str(q).strip()
-                            try:
-                                with self.conn.cursor() as cur:
-                                    cur.execute(sql)
-                                    rows = cur.fetchall()
-                                    columns = [desc[0] for desc in cur.description]
-
-                                    for row in rows:
-                                        row_dict = dict(zip(columns, row))
-                                        for template in templates:
-                                            uri = template
-                                            for col, val in row_dict.items():
-                                                uri = re.sub(rf"\{{{col}\}}", str(val), uri)
-                                            sql_subjects.add(uri)
-
-                            except Exception as e:
-                                output_buffer.write(f"⚠ Error ejecutando query para {pred}: {e}\n")
-
-            subjects_by_predicate[pred] = sql_subjects or "No matching subjects found."
-
-        return subjects_by_predicate
-
-    def close(self):
-        self.conn.close()
+def normalize_type(value):
+    if value is None:
+        return "UNKNOWN"
+    return value.split("#")[-1] if "#" in value else value
 
 
-# ==========================
-# Uso
-# ==========================
 if __name__ == "__main__":
-    # Archivo donde escribir TODO
-    output_buffer = StringIO()
 
-    mapping_file = "prueba.ttl"
-    db_url = "postgresql+psycopg://postgres:1234@localhost:5432/lubm4obda"
+    graph = Graph()
+    graph.parse("prueba.ttl", format="turtle")
 
-    processor = RMLProcessor(mapping_file, db_url)
+    rows = list(graph.query(QUERY, initNs={"rml": RML, "rr": RR}))
 
-    output_buffer.write("\n👉 Predicados extraídos del mapping:\n")
-    predicates = processor.get_predicates_from_mapping()
-    output_buffer.write(str(predicates) + "\n\n")
+    # Estructura final: TriplesMap → Subject + Predicates + Objects
+    triplesmap_data = {}
 
-    output_buffer.write("\n👉 Sujetos reales generados para cada predicado (usando templates del mapping):\n")
-    result = processor.get_subjects_from_db_with_templates()
+    for row in rows:
+        tm = str(row.tm)
+        predicate = str(row.predicateValue)
+        object_val = str(row.object) if row.object else None
+        template = str(row.template) if row.template else None
+        obj_type = normalize_type(str(row.objType)) if row.objType else None
 
-    for pred, subjects in result.items():
-        output_buffer.write(f"\n🔹 {pred}\n")
-        if isinstance(subjects, set):
-            for s in subjects:
-                output_buffer.write(f"  {s}\n")
-        else:
-            output_buffer.write(f"  {subjects}\n")
+        if tm not in triplesmap_data:
+            triplesmap_data[tm] = {
+                "subject": template,
+                "predicates": {}
+            }
 
-    processor.close()
+        if predicate not in triplesmap_data[tm]["predicates"]:
+            triplesmap_data[tm]["predicates"][predicate] = []
 
-    # Guardar en archivo TTL
-    with open("output_templates.ttl", "w") as f:
-        f.write(output_buffer.getvalue())
+        if object_val:
+            triplesmap_data[tm]["predicates"][predicate].append({
+                "object": object_val,
+                "type": obj_type
+            })
 
-    print("\n📌 Archivo guardado como: output_templates.ttl")
+    # ---- Escribir salida formateada ----
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+
+        f.write("📌 AGRUPACIÓN POR TRIPLESMAP\n")
+        f.write("===========================================\n\n")
+
+        for tm, entry in triplesmap_data.items():
+            f.write(f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
+            f.write(f"🔹 TriplesMap: {tm}\n")
+
+            if entry["subject"]:
+                f.write(f"    • SubjectMap → {entry['subject']}\n")
+            else:
+                f.write(f"    • SubjectMap → ❌ No definido\n")
+
+            f.write("\n    Predicates:\n")
+
+            for pred, objects in entry["predicates"].items():
+                f.write(f"       🔸 {pred}\n")
+
+                if objects:
+                    for obj in objects:
+                        f.write(f"          ↳ Object: {obj['object']}  (type: {obj['type']})\n")
+                else:
+                    f.write("          ↳ ❌ No ObjectMap definido\n")
+
+            f.write("\n")
+
+    print(f"\n📁 Archivo generado correctamente en: {OUTPUT_FILE}\n")
